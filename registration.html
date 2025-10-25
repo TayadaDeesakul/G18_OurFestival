@@ -5,32 +5,55 @@
   <title>Festival Registration</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/mystyle.css">
+  <script src="js/validation.js" defer></script>
 </head>
 <body>
-    <form>
-        <h2>Festival Registration</h2>
-        <fieldset class="personal_info">
-            <legend>Personal Information</legend>
-            <label>Name :</label>
-            <input type="name" name="Fullname" required>
-            <br><br>
-            <label>Email :</label>
-            <input type="email" name="Email" required>
-            <br><br>
-            <label>Phone Number :</label>
-            <input type="tel" name="Phone" required>
-            <br><br>
-            <label>Age Group :</label>
-            <select name="Age">
-                <option value="under_18">Under 18</option>
-                <option value="18_25">18-25</option>
-                <option value="26_35">26-35</option>
-                <option value="36_45">36-45</option>
-                <option value="46_above">46 and above</option>
-            <br><br>
-        </fieldset>
-        <br><br>
-    </form>
-    
-    
+  <form id="festivalForm">
+    <h2>Festival Registration</h2>
+
+    <fieldset class="personal_info">
+      <legend>Personal Information</legend>
+
+      <label for="fullname">Name:</label>
+      <input type="text" id="fullname" name="Fullname" placeholder="FirstName LastName" required>
+      <span class="error" id="nameError"></span>
+      <br><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="Email" placeholder="yours@email.com" required>
+      <span class="error" id="emailError"></span>
+      <br><br>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="Phone" pattern="[0-9]{10}" placeholder="10-digit number" required>
+      <span class="error" id="phoneError"></span>
+      <br><br>
+
+      <label for="age">Age Group:</label>
+      <select id="age" name="Age" required>
+        <option value="">-- Select --</option>
+        <option value="under_18">Under 18</option>
+        <option value="18_25">18-25</option>
+        <option value="26_35">26-35</option>
+        <option value="36_45">36-45</option>
+        <option value="46_above">46 and above</option>
+      </select>
+      <span class="error" id="ageError"></span>
+      <br><br>
+
+      <label>Gender:</label><br>
+      <input type="radio" name="gender" value="Male"> Male
+      <input type="radio" name="gender" value="Female"> Female
+      <input type="radio" name="gender" value="LGBTQIA+"> LGBTQIA+
+      <span class="error" id="genderError"></span>
+      <br><br>
+
+      <button type="submit">Register</button>
+      <button type="reset">Reset</button>
+    </fieldset>
+  </form>
+
+  <div id="result"></div>
+  <div id="registeredList"></div>
 </body>
+</html>
