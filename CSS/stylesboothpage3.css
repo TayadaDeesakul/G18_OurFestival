@@ -1,0 +1,115 @@
+body {
+  background: linear-gradient(to bottom, #fffafa, #ffeaea);
+  font-family: "Quicksand", sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.booth-header {
+  text-align: center;
+  padding: 120px 20px 60px;
+  background: linear-gradient(135deg, #fff0f0, #fff);
+  color: #a42727;
+}
+.booth-header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  font-family: "Playfair Display", serif;
+}
+.booth-header p {
+  color: #555;
+  font-size: 1.1em;
+}
+
+.booth-images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 40px auto;
+  max-width: 1000px;
+}
+.booth-pic {
+  width: 45%;
+  min-width: 280px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.booth-pic:hover {
+  transform: scale(1.03);
+}
+
+.product-section {
+  text-align: center;
+  padding: 50px 20px 80px;
+}
+.product-section h2 {
+  color: #b71c1c;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 40px;
+}
+
+.category {
+  margin-bottom: 60px;
+}
+.category h3 {
+  font-family: "Playfair Display", serif;
+  color: #a42727;
+  font-size: 1.6em;
+  margin-bottom: 25px;
+}
+
+.product-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+.product-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  width: 260px;
+  padding: 20px;
+  transition: transform 0.3s;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+}
+.product-card img {
+  width: 100%;
+  height: 170px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.product-card h4 {
+  margin: 15px 0 5px;
+  color: #a42727;
+}
+.product-card p {
+  font-size: 0.95em;
+  color: #555;
+}
+.price {
+  display: inline-block;
+  background: #ffccbc;
+  color: #b71c1c;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .product-card {
+    width: 90%; 
+  }
+  .booth-pic {
+    width: 90%; 
+    min-width: unset;
+  }
+}
