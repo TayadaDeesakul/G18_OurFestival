@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Registration Dashboard</title>
+    <link rel="stylesheet" href="stylesummaryregistration.css">
+    <script src="summary-registration.js" defer></script> 
+</head>
+<body>
+    <header>
+        <h1>Summary Registration Dashboard</h1>
+        <p>ข้อมูลผู้ลงทะเบียนทั้งหมด</p>
+    </header>
+
+    <main class="container">
+        <section class="filter-controls">
+            <div class="control-group">
+                <label for="filter-type">แยกตามประเภท:</label>
+                <select id="filter-type">
+                    <option value="all">ทั้งหมด</option>
+                    <option value="registration">Registration Page</option>
+                    <option value="feedback">Feedback Page</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="filter-search">ค้นหา (ชื่อ หรือ อีเมล):</label>
+                <input type="search" id="filter-search" placeholder="พิมพ์เพื่อค้นหา...">
+            </div>
+            <div class="control-group">
+                <label for="filter-date">กรองตามวันที่ลงทะเบียน:</label>
+                <input type="date" id="filter-date-start">
+                <span>ถึง</span>
+                <input type="date" id="filter-date-end">
+            </div>
+        </section>
+
+        <section class="summary-data">
+            <h2>สรุปข้อมูล (พบ <span id="user-count">0</span> รายการ)</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ชื่อ-นามสกุล</th>
+                            <th>อีเมล</th>
+                            <th>ประเภท</th>
+                            <th>วันที่ลงทะเบียน</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-table-body">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
