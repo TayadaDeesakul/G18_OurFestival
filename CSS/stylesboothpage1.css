@@ -21,3 +21,38 @@
     flex-direction: column;
     margin-top: 100px;
 }
+.dessert-card img {
+    width: 250px; 
+    height: auto;
+    margin-top: -60px; 
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    border-radius: 15px;
+   margin-left: 25px;    
+}
+.dessert-card h3 {
+    margin-top: 10px;
+    color: #0a0909;
+    font-family:"Sniglet", system-ui;
+}
+.dessert-card p {
+    font-size: 15pt;
+    color: #000000;
+    margin-bottom: 0px;
+    text-align: left;
+    font-family:"Sniglet", system-ui ;
+}
+.explain1{
+  font-size: 15px;
+  color: #666;
+  text-align: left;
+  margin-top: -15px;
+  font-family: "Sniglet", system-ui;
+}  
+.dessert-section h1{
+  font-family: "Delicious Handrawn", cursive;
+  font-size: 40px;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #fff5e0;
+}
