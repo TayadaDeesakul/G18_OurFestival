@@ -1,0 +1,23 @@
+.poster{
+    background-color:#ffeaea ;
+    width: 100%;
+    height: 3000px;
+}
+.dessert-section{
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+    flex-wrap: wrap; 
+  }
+.dessert-card {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    max-width: 300px; 
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
