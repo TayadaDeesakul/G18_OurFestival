@@ -3,14 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const result = document.getElementById("result");
   const registeredList = document.getElementById("registeredList");
 
-  // Load and display existing registrations
+
   displayRegisteredNames();
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     let valid = true;
 
-    // Clear previous errors
+
     document.querySelectorAll(".error").forEach(e => e.textContent = "");
 
     const name = document.getElementById("fullname").value.trim();
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const age = document.getElementById("age").value;
     const gender = form.querySelector('input[name="gender"]:checked');
 
-    // Validation checks
+ 
     if (name.length < 2) {
       document.getElementById("nameError").textContent = "Please enter a valid name.";
       valid = false;
@@ -43,20 +43,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!valid) return;
 
-    // Save registration
+
+  
+    const now = new Date();
+
+
     const registration = {
       name,
       email,
       phone,
       age,
-      gender: gender.value
+      gender: gender.value,
+
+
+
+      type: 'registration', 
+      date: now.toISOString().split('T')[0], 
+      dateString: now.toLocaleDateString('th-TH', { day: '2-digit', month: 'short', year: 'numeric' }) 
+
     };
 
     let registered = JSON.parse(localStorage.getItem("festivalRegistrations")) || [];
     registered.push(registration);
     localStorage.setItem("festivalRegistrations", JSON.stringify(registered));
 
-    // Show success message
+
     result.innerHTML = `<h3>Thank you for registering, ${name}!</h3>
                         <p>Your information has been saved successfully.</p>`;
 
@@ -92,3 +103,4 @@ document.addEventListener("DOMContentLoaded", function () {
     registeredList.innerHTML = listHTML;
   }
 });
+

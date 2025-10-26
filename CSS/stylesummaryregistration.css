@@ -1,0 +1,112 @@
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #005a9c;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    border-bottom: 2px solid #005a9c;
+    padding-bottom: 10px;
+}
+
+
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+.control-group {
+    flex: 1 1 250px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.control-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.control-group input,
+.control-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+
+.summary-data {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #e9ecef;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+.user-row.hide {
+    display: none;
+}
+
+
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+    
+    .filter-controls {
+        flex-direction: column; 
+    }
+}
