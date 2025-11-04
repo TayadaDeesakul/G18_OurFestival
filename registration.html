@@ -4,56 +4,106 @@
   <meta charset="UTF-8">
   <title>Festival Registration</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/mystyle.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="js/validation.js" defer></script>
 </head>
 <body>
-  <form id="festivalForm">
-    <h2>Festival Registration</h2>
 
-    <fieldset class="personal_info">
-      <legend>Personal Information</legend>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Feliz Navidad Fair 🎄</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#team">Team</a></li>
+          <li class="nav-item"><a class="nav-link active text-danger" href="booth-directory.html">Zone</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-      <label for="fullname">Name:</label>
-      <input type="text" id="fullname" name="Fullname" placeholder="FirstName LastName" required>
-      <span class="error" id="nameError"></span>
-      <br><br>
+  <!-- Registration Form -->
+  <div class="container mt-5">
+    <h2 class="mb-4 text-center">Festival Registration</h2>
+    <form id="regForm" class="needs-validation" novalidate>
+      <div class="card p-4 shadow-sm">
+        <fieldset class="mb-4">
+          <legend>Personal Information</legend>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="Email" placeholder="yours@email.com" required>
-      <span class="error" id="emailError"></span>
-      <br><br>
+          <div class="mb-3">
+            <label for="fullname" class="form-label">Name</label>
+            <input type="text" class="form-control" id="fullname" name="Fullname" required>
+            <div class="invalid-feedback">Please enter your full name.</div>
+          </div>
 
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="Phone" pattern="[0-9]{10}" placeholder="10-digit number" required>
-      <span class="error" id="phoneError"></span>
-      <br><br>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="Email" required>
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
 
-      <label for="age">Age Group:</label>
-      <select id="age" name="Age" required>
-        <option value="">-- Select --</option>
-        <option value="under_18">Under 18</option>
-        <option value="18_25">18-25</option>
-        <option value="26_35">26-35</option>
-        <option value="36_45">36-45</option>
-        <option value="46_above">46 and above</option>
-      </select>
-      <span class="error" id="ageError"></span>
-      <br><br>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" name="Phone" pattern="[0-9]{10}" required>
+            <div class="invalid-feedback">Enter a 10-digit phone number.</div>
+          </div>
 
-      <label>Gender:</label><br>
-      <input type="radio" name="gender" value="Male"> Male
-      <input type="radio" name="gender" value="Female"> Female
-      <input type="radio" name="gender" value="LGBTQIA+"> LGBTQIA+
-      <span class="error" id="genderError"></span>
-      <br><br>
+          <div class="mb-3">
+            <label for="age" class="form-label">Age Group</label>
+            <select class="form-select" id="age" name="Age" required>
+              <option value="">-- Select --</option>
+              <option value="under_18">Under 18</option>
+              <option value="18_25">18-25</option>
+              <option value="26_35">26-35</option>
+              <option value="36_45">36-45</option>
+              <option value="46_above">46 and above</option>
+            </select>
+            <div class="invalid-feedback">Please select your age group.</div>
+          </div>
 
-      <button type="submit">Register</button>
-      <button type="reset">Reset</button>
-    </fieldset>
-  </form>
+          <div class="mb-3">
+            <label class="form-label">Gender</label><br>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" value="Male" required>
+              <label class="form-check-label">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" value="Female">
+              <label class="form-check-label">Female</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" value="LGBTQIA+">
+              <label class="form-check-label">LGBTQIA+</label>
+            </div>
+            <div class="invalid-feedback d-block">Please select your gender.</div>
+          </div>
+        </fieldset>
 
-  <div id="result"></div>
-  <div id="registeredList"></div>
+        <fieldset class="mb-4">
+          <legend>Festival Attendance</legend>
+          <div class="mb-3">
+            <label for="dateAtd" class="form-label">Attendance Date</label>
+            <input type="date" class="form-control" id="dateAtd" name="dateAtd">
+          </div>
+        </fieldset>
+
+        <div class="d-flex justify-content-between">
+          <button type="submit" class="btn btn-primary">Register</button>
+          <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+      </div>
+    </form>
+
+    <div id="result" class="mt-4"></div>
+    <div id="registeredList" class="mt-4"></div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

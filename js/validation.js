@@ -1,106 +1,49 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("festivalForm");
-  const result = document.getElementById("result");
-  const registeredList = document.getElementById("registeredList");
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("regForm");
+  const resultDiv = document.getElementById("result");
+  const registeredListDiv = document.getElementById("registeredList");
 
+  let visitors = [];
 
-  displayRegisteredNames();
-
-  form.addEventListener("submit", function (event) {
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
-    let valid = true;
+    event.stopPropagation();
 
-
-    document.querySelectorAll(".error").forEach(e => e.textContent = "");
+    if (!form.checkValidity()) {
+      form.classList.add("was-validated");
+      return;
+    }
 
     const name = document.getElementById("fullname").value.trim();
     const email = document.getElementById("email").value.trim();
     const phone = document.getElementById("phone").value.trim();
     const age = document.getElementById("age").value;
-    const gender = form.querySelector('input[name="gender"]:checked');
+    const gender = form.querySelector('input[name="gender"]:checked')?.value || "Not specified";
+    const date = document.getElementById("dateAtd").value;
 
- 
-    if (name.length < 2) {
-      document.getElementById("nameError").textContent = "Please enter a valid name.";
-      valid = false;
-    }
-    if (!email.includes("@")) {
-      document.getElementById("emailError").textContent = "Invalid email address.";
-      valid = false;
-    }
-    if (!/^\d{10}$/.test(phone)) {
-      document.getElementById("phoneError").textContent = "Phone must be 10 digits.";
-      valid = false;
-    }
-    if (!age) {
-      document.getElementById("ageError").textContent = "Please select your age group.";
-      valid = false;
-    }
-    if (!gender) {
-      document.getElementById("genderError").textContent = "Please select your gender.";
-      valid = false;
-    }
+    const visitor = { name, email, phone, age, gender, date };
+    visitors.push(visitor);
 
-    if (!valid) return;
-
-
-  
-    const now = new Date();
-
-
-    const registration = {
-      name,
-      email,
-      phone,
-      age,
-      gender: gender.value,
-
-
-
-      type: 'registration', 
-      date: now.toISOString().split('T')[0], 
-      dateString: now.toLocaleDateString('th-TH', { day: '2-digit', month: 'short', year: 'numeric' }) 
-
-    };
-
-    let registered = JSON.parse(localStorage.getItem("festivalRegistrations")) || [];
-    registered.push(registration);
-    localStorage.setItem("festivalRegistrations", JSON.stringify(registered));
-
-
-    result.innerHTML = `<h3>Thank you for registering, ${name}!</h3>
-                        <p>Your information has been saved successfully.</p>`;
-
+    showResult(visitor);
+    updateVisitorList();
     form.reset();
-    displayRegisteredNames();
+    form.classList.remove("was-validated");
   });
 
-  function displayRegisteredNames() {
-    const registered = JSON.parse(localStorage.getItem("festivalRegistrations")) || [];
-    if (registered.length === 0) {
-      registeredList.innerHTML = "<p>No registrations yet.</p>";
-      return;
-    }
+  function showResult(visitor) {
+    resultDiv.innerHTML = `
+      <div class="alert alert-success">
+        <strong>Thank you, ${visitor.name}!</strong> You've successfully registered for the festival.
+      </div>
+    `;
+  }
 
-    let listHTML = `
-      <h3>Registered Participants</h3>
-      <table border="1" cellpadding="8">
-        <tr>
-          <th>Name</th><th>Email</th><th>Phone</th><th>Age Group</th><th>Gender</th>
-        </tr>`;
-    registered.forEach(r => {
-      listHTML += `
-        <tr>
-          <td>${r.name}</td>
-          <td>${r.email}</td>
-          <td>${r.phone}</td>
-          <td>${r.age}</td>
-          <td>${r.gender}</td>
-        </tr>`;
-    });
-    listHTML += "</table>";
-
-    registeredList.innerHTML = listHTML;
+  function updateVisitorList() {
+    registeredListDiv.innerHTML = `
+      <h4>Registered Visitors (${visitors.length})</h4>
+      <ul class="list-group">
+        ${visitors.map(v => `<li class="list-group-item">${v.name} (${v.age}, ${v.gender}) - ${v.date || "No date selected"}</li>`).join("")}
+      </ul>
+    `;
   }
 });
-
