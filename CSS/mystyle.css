@@ -114,17 +114,45 @@ h1, h2, h3, .section-title {
 .zone-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 30px;
+  max-width: 1400px;
+  margin: 40px auto;
 }
+
+.zone{
+flex: 0 0 auto;
+width: 340px;
+display: flex;
+justify-content: flex-start;
+padding: 20px;
+flex-direction: column;
+align-items: center;
+border-radius: 8px
+}
+
 
 .zone-card {
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   width: 300px;
+  min-height: 420px;
   padding: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 30px;
+  justify-content:space-between;
+}
+
+.zone-tittle{
+font-size: 22px;
+font-weight: bold;
+font-family: "Playfair Display", serif;
+color: #a42727f7;
+padding: 10px;
+margin-bottom: 20px;
 }
 
 .zone-card:hover {
