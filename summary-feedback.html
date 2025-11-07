@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summary Feedback</title>
+  <link rel="stylesheet" href="css/feedback.css">
+  <script src="js/summary-feedback.js" defer></script>
 </head>
 <body>
-    
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <span class="logo-text">Feliz Navidad Fair 🎄</span>
+      </div>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#team">Team</a></li>
+        <li><a href="booth-directory.html">Zone</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>🎉 Feedback Summary 🎉</h1>
+
+    <section id="summarySection">
+      <h2>Thank you for your feedback!</h2>
+      <p><strong>Name:</strong> <span id="summaryName"></span></p>
+      <p><strong>Email:</strong> <span id="summaryEmail"></span></p>
+      <p><strong>Rating:</strong> <span id="summaryRating"></span> / 5</p>
+      <p><strong>Your Feedback:</strong></p>
+      <blockquote id="summaryFeedback"></blockquote>
+
+      <a href="feedback.html" class="btn">← Go Back</a>
+    </section>
+  </main>
+
+  <script src="js/navbar.js" defer></script>
 </body>
 </html>
