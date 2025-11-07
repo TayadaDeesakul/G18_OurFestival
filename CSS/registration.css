@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Quicksand:wght@400;600&display=swap');
+
+body{
+  font-family: "Quicksand", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #333;
+  overflow-x: hidden;
+}
+.navbar-brand{
+  font-family: "Great Vibes", cursive;
+  font-size: 1.5em;
+  color: #ad0404;
+}
+
+h2,#result{
+  font-family: "Playfair Display", serif;
+  color: #a42727f7;
+}
+.btn-primary{
+    background-color: #ad0404;
+    border: #ad0404;
+}
+#result{
+    background: #ad0404;
+}

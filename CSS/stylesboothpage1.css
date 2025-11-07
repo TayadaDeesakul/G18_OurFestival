@@ -1,58 +1,129 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Delicious+Handrawn&family=Love+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
 .poster{
     background-color:#ffeaea ;
     width: 100%;
-    height: 3000px;
+    height: 2000px;
+}
+.topper{
+  font-family: "Allura", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 80px;
 }
 .dessert-section{
     display: flex;
     justify-content: center;
-    gap: 30px; 
+    gap: 60px; 
     flex-wrap: wrap; 
+    margin-bottom: 40px;
   }
 .dessert-card {
-    background-color: #fff;
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    max-width: 300px; 
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px;
+    width: 300px;
+    border-radius: 30px;
+    background: white;
+    padding: 25px;
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+.dessert-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.18);
 }
 .dessert-card img {
-    width: 250px; 
-    height: auto;
-    margin-top: -60px; 
-    object-fit: cover;
-    aspect-ratio: 1/1;
-    border-radius: 15px;
-   margin-left: 25px;    
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
 }
 .dessert-card h3 {
     margin-top: 10px;
-    color: #0a0909;
+    color:#b31a1a;
     font-family:"Sniglet", system-ui;
+    font-size: 22px;
 }
-.dessert-card p {
-    font-size: 15pt;
-    color: #000000;
-    margin-bottom: 0px;
-    text-align: left;
-    font-family:"Sniglet", system-ui ;
-}
-.explain1{
-  font-size: 15px;
-  color: #666;
+.explain h4 {
+  font-size: 14px;
+  color: #1f1e1e;
   text-align: left;
   margin-top: -15px;
-  font-family: "Sniglet", system-ui;
+  font-family: "Comic Relief", system-ui;
+  font-weight: 400;
+  margin-top: 10px;
+  font-style: normal;
 }  
-.dessert-section h1{
-  font-family: "Delicious Handrawn", cursive;
-  font-size: 40px;
+.Bestseller h2 {
+  font-family: "Allura", cursive;
   font-weight: 400;
   font-style: normal;
-  background-color: #fff5e0;
+  font-size: 50px;
+  text-align: center;  
+  margin-top: 100px;
 }
+.Bestseller-boxes p {
+  font-family: "Comic Relief", system-ui;
+  font-size: 14px;
+  color: #1f1e1e;
+  margin-top: 5px;
+  
+}
+.Bestseller-box {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;   
+}
+.Bestseller-boxes h3 {
+    color:#b31a1a;
+    font-family:"Sniglet", system-ui;
+    font-size: 22px;
+}
+.Bestseller-boxes button {
+    font-family: "Comic Relief", system-ui;
+    font-size: 15px;
+}
+
+.box {
+    background: #fff;
+    padding: 30px;
+    width: 400px;
+    height: 320px;
+    border-radius: 12px;
+    border: 1px solid #e8e8e8;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+.box img {
+width: 250px;
+height: 250px;
+border-radius: 50%;
+object-fit: cover;
+}
+.boxes h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.price{
+  background-color: rgb(249, 205, 205);
+  padding: 5px 7px;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: 600;
+  font-family: "Sniglet", system-ui;
+  font-size: 15px;
+  color: #f43f3f;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+
