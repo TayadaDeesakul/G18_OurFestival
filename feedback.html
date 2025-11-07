@@ -1,43 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leave your feedback Page</title>
-    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="css/feedback.css">
     <script src="js/feedback.js" defer></script>
 </head>
 <body>
 
-    <h1>Leave your feedback!</h1>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-text">Feliz Navidad Fair 🎄</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#team">Team</a></li>
+                <li><a href="booth-directory.html" class="active">Zone</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <form id="feedbackForm">
-        <fieldset>
-            <legend>Feedback Form</legend>
+    <main>
+        <h1>Leave your feedback!</h1>
 
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-
-            <label for="email">Gmail:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-
+        <form id="feedbackForm">
             <fieldset>
-                <legend>Satisfaction</legend>
-                <label><input type="radio" name="satisfaction" value="1" required> 1</label>
-                <label><input type="radio" name="satisfaction" value="2"> 2</label>
-                <label><input type="radio" name="satisfaction" value="3"> 3</label>
-                <label><input type="radio" name="satisfaction" value="4"> 4</label>
-                <label><input type="radio" name="satisfaction" value="5"> 5</label>
+                <legend>Feedback Form</legend>
+
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Gmail:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <fieldset>
+                    <legend>Satisfaction</legend>
+                    <label><input type="radio" name="satisfaction" value="1" required> 1</label>
+                    <label><input type="radio" name="satisfaction" value="2"> 2</label>
+                    <label><input type="radio" name="satisfaction" value="3"> 3</label>
+                    <label><input type="radio" name="satisfaction" value="4"> 4</label>
+                    <label><input type="radio" name="satisfaction" value="5"> 5</label>
+                </fieldset>
+                <br>
+
+                <label for="feedback">Feedbacks:</label><br>
+                <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br><br>
+
+                <input type="submit" value="Submit">
             </fieldset>
-            <br>
+        </form>
 
-            <label for="feedback">Feedbacks:</label><br>
-            <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br><br>
+        <h3>Your rating:</h3>
+        <p id="ratingDisplay">No rating yet.</p>
+    </main>
 
-            <input type="submit" value="Submit">
-        </fieldset>
-    </form>
-
-    <h3>Your rating:</h3>
-    <p id="ratingDisplay">No rating yet.</p>
-
+    <script src="js/navbar.js" defer></script>
 </body>
 </html>
