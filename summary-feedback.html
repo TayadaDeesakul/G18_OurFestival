@@ -2,44 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Registered Participants</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Summary Feedback</title>
-  <link rel="stylesheet" href="css/feedback.css">
-  <script src="js/summary-feedback.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <span class="logo-text">Feliz Navidad Fair 🎄</span>
-      </div>
-      <button class="menu-toggle" id="menuToggle">☰</button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#team">Team</a></li>
-        <li><a href="booth-directory.html">Zone</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">Feliz Navidad Fair 🎄</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#team">Team</a></li>
+        <li class="nav-item"><a class="nav-link active text-danger" href="#">Registered</a></li>
       </ul>
-    </nav>
-  </header>
+    </div>
+  </div>
+</nav>
 
-  <main>
-    <h1>🎉 Feedback Summary 🎉</h1>
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">Registered Participants</h2>
+  <div id="registeredList">กำลังโหลดข้อมูล...</div>
+</div>
 
-    <section id="summarySection">
-      <h2>Thank you for your feedback!</h2>
-      <p><strong>Name:</strong> <span id="summaryName"></span></p>
-      <p><strong>Email:</strong> <span id="summaryEmail"></span></p>
-      <p><strong>Rating:</strong> <span id="summaryRating"></span> / 5</p>
-      <p><strong>Your Feedback:</strong></p>
-      <blockquote id="summaryFeedback"></blockquote>
+<script>
+async function loadRegistered() {
+  try {
+    const res = await fetch("data.json");
+    const data = await res.json();
 
-      <a href="feedback.html" class="btn">← Go Back</a>
-    </section>
-  </main>
+    if (!data.length) {
+      document.getElementById("registeredList").innerText = "ยังไม่มีผู้ลงทะเบียน";
+      return;
+    }
 
-  <script src="js/navbar.js" defer></script>
+    let html = "<table class='table table-bordered'><thead><tr>";
+    html += "<th>Name</th><th>Email</th><th>Phone</th><th>Age</th><th>Gender</th><th>Attendance Date</th></tr></thead><tbody>";
+
+    data.forEach(item => {
+      html += `<tr>
+        <td>${item.fullname}</td>
+        <td>${item.email}</td>
+        <td>${item.phone}</td>
+        <td>${item.age}</td>
+        <td>${item.gender}</td>
+        <td>${item.dateAtd}</td>
+      </tr>`;
+    });
+
+    html += "</tbody></table>";
+    document.getElementById("registeredList").innerHTML = html;
+
+  } catch (err) {
+    document.getElementById("registeredList").innerHTML = `<div class="alert alert-danger">ไม่สามารถโหลดข้อมูลได้: ${err}</div>`;
+  }
+}
+
+loadRegistered();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
