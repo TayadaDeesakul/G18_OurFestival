@@ -61,7 +61,7 @@ img {
   display: flex;
   align-items: center;          
   justify-content: space-between;
-  max-width:1000px;    
+  max-width:1200px;    
   height: 600px;        
   margin: 40px auto;             
   background-color: #ffffff;
@@ -120,6 +120,7 @@ img {
   border-radius: 30px;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
+  margin-right: 2px;
 }
 .booth-pic:hover {
   transform: scale(1.03);
