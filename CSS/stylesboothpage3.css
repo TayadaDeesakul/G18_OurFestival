@@ -1,12 +1,44 @@
 body {
       background: linear-gradient(to bottom right, #fff5f5, #ffeaea);
-    }
-    .zone-section {
+}
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.next { right: 0; }
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.6); }
+.zone-section {
       padding-top: 100px;
       padding-bottom: 80px;
     }
     
-    .zone-card {
+.zone-card {
   height: 100%;
   display: flex;
   flex-direction: column;
