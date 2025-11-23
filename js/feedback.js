@@ -2,29 +2,46 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("feedbackForm");
     const ratingDisplay = document.getElementById("ratingDisplay");
 
-    const savedRating = localStorage.getItem("userRating");
-    if (savedRating) {
-        ratingDisplay.textContent = `Your last rating was: ${savedRating}`;
-    }
-
-    form.addEventListener("submit", function (event) {
-        event.preventDefault(); 
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault();
 
         const satisfaction = document.querySelector('input[name="satisfaction"]:checked');
 
-        if (satisfaction) {
-            const rating = satisfaction.value;
-            ratingDisplay.textContent = `You rated: ${rating}`;
-            
-            localStorage.setItem("userRating", rating);
-
-            alert(`Thank you! Your rating of ${rating} has been recorded.`);
-        } else {
+        if (!satisfaction) {
             ratingDisplay.textContent = "No rating selected.";
             alert("Please select a satisfaction rating before submitting.");
+            return;
         }
 
-        form.reset();
+        const rating = satisfaction.value;
+
+        const formData = {
+            type: "feedback",
+            fullname: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            satisfaction: rating,
+            message: document.getElementById("feedback").value
+        };
+
+        try {
+            const res = await fetch("submit.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await res.json();
+
+            if (data.status === "success") {
+                ratingDisplay.textContent = `You rated: ${rating}`;
+                alert(`Thank you! Your rating of ${rating} has been recorded.`);
+                form.reset();
+            } else {
+                alert("Error: " + data.message);
+            }
+        } catch (err) {
+            alert("Cannot connect to server: " + err);
+        }
     });
 });
 
