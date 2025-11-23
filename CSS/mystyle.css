@@ -53,6 +53,83 @@ h1, h2, h3, .section-title {
   margin: auto;
 }
 
+/* 🌟 ZONE SECTION */
+
+.zone-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to bottom right, #fff5f5, #ffeaea);
+}
+
+.section-title {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px #d5ffcc;
+}
+
+.section-subtitle {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* จัดวางรูป */
+.zone-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* การ์ด */
+.zone-card {
+  position: relative;
+  display: block;
+  width: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+}
+
+.zone-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* รูปภาพ */
+.zone-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+/* เอฟเฟกต์ hover */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 20px;
+}
+
+.zone-card:hover .overlay {
+  opacity: 1;
+}
+
 /* 🌟 TEAM */
 .team-section {
   background-color: #f9f9f9;
