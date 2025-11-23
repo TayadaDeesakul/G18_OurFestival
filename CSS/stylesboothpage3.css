@@ -1,0 +1,21 @@
+body {
+      background: linear-gradient(to bottom right, #fff5f5, #ffeaea);
+    }
+    .zone-section {
+      padding-top: 100px;
+      padding-bottom: 80px;
+    }
+    
+    .zone-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.zone-card img {
+  flex-shrink: 0;
+}
+
+.zone-card .w3-container {
+  flex-grow: 1;
+}
