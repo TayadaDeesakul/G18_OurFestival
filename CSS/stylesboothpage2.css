@@ -61,13 +61,14 @@ img {
   gap: 25px;
   margin: 40px auto;
   max-width: 1000px;
+  margin-top: -20px;
 }
 .booth-pic {
   width: 45%;
   min-width: 550px;
   height: 400px;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 30px;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
 }
