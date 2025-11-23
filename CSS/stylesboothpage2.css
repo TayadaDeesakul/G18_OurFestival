@@ -5,6 +5,38 @@ body {
   margin: 0;
   padding: 0;
 }
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.next { right: 0; }
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.6); }
 
 .booth-header {
   text-align: center;
@@ -32,8 +64,8 @@ body {
 }
 .booth-pic {
   width: 45%;
-  min-width: 280px;
-  height: 240px;
+  min-width: 550px;
+  height: 400px;
   object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
