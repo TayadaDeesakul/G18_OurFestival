@@ -1,128 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Quicksand:wght@400;600&display=swap');
-
-/* 🌟 GLOBAL STYLE */
 body {
-  font-family:  "Quicksand", sans-serif;
-  margin: 0;
-  padding: 0;
-  background:  #ffffff;
-  color: #333;
-  overflow-x: hidden;
+    background: linear-gradient(to bottom right, #fff7f7, #ffe9e9);
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
 }
-
-
-.w3-top {
-  top: 0;
-  position: relative;
-  width: 100%;
-  z-index: 1000;
-  margin: 0;
-  border: none;
-}
-
-
-h1, h2, h3, .section-title {
-  font-family: "Playfair Display", serif;
-  color: #a42727f7;
-}
-
-/* 🌟 NAVBAR */
-.nav-bar {
-  letter-spacing: 3px;
-}
-
-.nav-logo {
-  font-family: "Great Vibes", cursive;
-  font-size: 1.5em;
-  color: #ad0404 !important;
-}
-
-/* 🌟 ZONE SECTION */
 
 .zone-section {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(to bottom right, #fff5f5, #ffeaea);
+    padding-top: 100px;
+    padding-bottom: 80px;
+    text-align: center;
 }
 
-.section-title {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-  text-shadow: 1px 1px 3px #d5ffcc;
+.zone-title {
+    font-size: 32px;
+    color: #7d2c2c;
+    margin-bottom: 10px;
 }
 
-.section-subtitle {
-  font-size: 1.2em;
-  color: #555;
-  margin-bottom: 40px;
+.zone-subtitle {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 40px;
 }
 
-/* จัดวางรูป */
-.zone-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
+.zone-grid {
+     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
 }
 
-/* การ์ด */
+.zone-column {
+    flex: 1 1 300px;   /* ให้การ์ดย่อขยายตามพื้นที่ได้ */
+    max-width: 350px;
+}
+
+.zone-header {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #5f2d2d;
+}
+
 .zone-card {
-  position: relative;
-  display: block;
-  width: 300px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-decoration: none;
+    background: white;
+    border-radius: 20px;
+    width: 300px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    padding-bottom: 20px;
+}
+/* Zone2 → 3 card */
+.zone-3cards .zone-card {
+    width: 280px; 
 }
 
-.zone-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+/* Zone3 → การ์ดเดียวให้จัดอยู่ตรงกลาง */
+.zone-1card {
+    justify-content: center;
+}
+.zone-row {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 60px;
 }
 
-/* รูปภาพ */
-.zone-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 20px;
-  display: block;
+.zone-img {
+     width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
 }
 
-/* เอฟเฟกต์ hover */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);
-  color: #fff;
-  font-size: 1.3em;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s;
-  border-radius: 20px;
+.zone-card-title {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #7d2c2c;
 }
 
-.zone-card:hover .overlay {
-  opacity: 1;
+.zone-card-desc {
+    width: 80%;
+    margin: 10px auto 20px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
 }
 
-/* Zone */
+.zone-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #7d2c2c;
+    color: #7d2c2c;
+    font-weight: 500;
+    transition: 0.2s;
+}
 
-/* 📱 Responsive */
-@media (max-width: 768px) {
-  .zone-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .zone-card {
-    width: 90%;
-  }
+.zone-btn:hover {
+    background: #7d2c2c;
+    color: white;
 }
