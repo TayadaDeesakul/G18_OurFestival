@@ -49,6 +49,26 @@ img {
 
 .next { right: 0; }
 .prev:hover, .next:hover { background-color: rgba(0,0,0,0.6); }
+.text-overlay {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+.text-overlay h1 {
+    font-size: 45px;
+    margin: 0;
+    color: aliceblue;
+}
+
+.text-overlay p {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #fff;
+}
 .dessert-section{
     display: flex;
     justify-content: center;

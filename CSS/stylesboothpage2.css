@@ -37,23 +37,26 @@ img {
 
 .next { right: 0; }
 .prev:hover, .next:hover { background-color: rgba(0,0,0,0.6); }
-
-.booth-header {
-  text-align: center;
-  padding: 120px 20px 60px;
-  background: linear-gradient(135deg, #fff0f0, #fff);
-  color: #a42727;
+.text-overlay {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
 }
-.booth-header h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-  font-family: "Playfair Display", serif;
-}
-.booth-header p {
-  color: #555;
-  font-size: 1.1em;
+.text-overlay h1 {
+    font-size: 45px;
+    margin: 0;
+    color: aliceblue;
 }
 
+.text-overlay p {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #fff;
+}
 .booth-images {
   display: flex;
   justify-content: center;
@@ -61,7 +64,7 @@ img {
   gap: 25px;
   margin: 40px auto;
   max-width: 1000px;
-  margin-top: -20px;
+  margin-top: 100px;
 }
 .booth-pic {
   width: 45%;
