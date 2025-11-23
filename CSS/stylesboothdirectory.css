@@ -1,9 +1,10 @@
 body {
     background: linear-gradient(to bottom right, #fff7f7, #ffe9e9);
-    font-family: "Poppins", sans-serif;
+    font-family: "Quicksand", sans-serif;
     margin: 0;
     padding: 0;
 }
+
 
 .zone-section {
     padding-top: 100px;
@@ -12,6 +13,7 @@ body {
 }
 
 .zone-title {
+    font-family: "Playfair Display", serif;
     font-size: 32px;
     color: #7d2c2c;
     margin-bottom: 10px;
@@ -73,9 +75,10 @@ body {
 }
 
 .zone-card-title {
+    font-family: "Playfair Display", serif;
     margin-top: 20px;
     font-size: 22px;
-    color: #7d2c2c;
+    color: #a42727f7;
 }
 
 .zone-card-desc {

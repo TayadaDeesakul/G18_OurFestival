@@ -170,6 +170,7 @@ img {
   object-fit: cover;
 }
 .product-card h4 {
+  font-family: "Playfair Display", serif;
   margin: 15px 0 5px;
   color: #a42727;
 }

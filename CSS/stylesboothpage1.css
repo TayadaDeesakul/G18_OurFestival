@@ -6,7 +6,8 @@
     height: 2800px;
 }
 .topper{
-font-family: "Quicksand", sans-serif;
+  font-family: "Playfair Display", serif;
+  color:#b23b48;
   font-size: 50px;
   text-align: center;
   margin-top: 80px;
@@ -140,7 +141,7 @@ img {
     margin-top: 10px;
     color:#b31a1a;
     font-size: 22px;
-    font-family: "Quicksand", sans-serif;
+    font-family: "Playfair Display", serif;
 }
 .explain h4 {
   font-size: 14px;
@@ -151,7 +152,7 @@ img {
   margin-top: 10px;
 }  
 .Bestseller h2 {
-  font-family: "Quicksand", sans-serif;
+  font-family: "Playfair Display", serif;
   font-size: 50px;
   text-align: center;  
   margin-top: 100px;
@@ -171,7 +172,7 @@ img {
 }
 .Bestseller-boxes h3 {
     color:#b31a1a;
-    font-family: "Quicksand", sans-serif;
+    font-family: "Playfair Display", serif;
     font-size: 22px;
 }
 .Bestseller-boxes button {
