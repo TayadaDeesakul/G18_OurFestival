@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Festival Registration</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="CSS/registration.css" rel="stylesheet">
-  <script src="js/validation.js" defer></script>
 </head>
+
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
@@ -107,47 +108,48 @@
 </body>
 
 <script>
-const form = document.getElementById("regForm");
+  const form = document.getElementById("regForm");
 
-form.addEventListener("submit", async function(e) {
-  e.preventDefault();
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-  if (!form.checkValidity()) {
-    form.classList.add("was-validated");
-    return;
-  }
-
-  const formData = {
-    fullname: document.getElementById("fullname").value,
-    email: document.getElementById("email").value,
-    phone: document.getElementById("phone").value,
-    age: document.getElementById("age").value,
-    gender: form.gender.value,
-    dateAtd: document.getElementById("dateAtd").value
-  };
-
-  try {
-
-    const res = await fetch("submit.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData)
-    });
-
-    const data = await res.json();
-
-    if (data.status === "success") {
-      document.getElementById("result").innerHTML = `<div class="alert alert-success">${data.message}</div>`;
-      form.reset();
-      form.classList.remove("was-validated");
-    } else {
-      document.getElementById("result").innerHTML = `<div class="alert alert-danger">${data.message}</div>`;
+    if (!form.checkValidity()) {
+      form.classList.add("was-validated");
+      return;
     }
 
-  } catch (err) {
-    document.getElementById("result").innerHTML = `<div class="alert alert-danger">ไม่สามารถติดต่อ server ได้: ${err}</div>`;
-  }
-});
+    const formData = {
+      type: "registration",
+      fullname: document.getElementById("fullname").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      age: document.getElementById("age").value,
+      gender: form.gender.value,
+      dateAtd: document.getElementById("dateAtd").value
+    };
+
+    try {
+
+      const res = await fetch("submit.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await res.json();
+
+      if (data.status === "success") {
+        document.getElementById("result").innerHTML = `<div class="alert alert-success">${data.message}</div>`;
+        form.reset();
+        form.classList.remove("was-validated");
+      } else {
+        document.getElementById("result").innerHTML = `<div class="alert alert-danger">${data.message}</div>`;
+      }
+
+    } catch (err) {
+      document.getElementById("result").innerHTML = `<div class="alert alert-danger">ไม่สามารถติดต่อ server ได้: ${err}</div>`;
+    }
+  });
 </script>
 
 </html>

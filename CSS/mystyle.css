@@ -361,7 +361,12 @@ h1, h2, h3, .section-title {
   line-height: 1.6em;
   color: #444;
 }
-
+.team-member img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 50%;
+  overflow: hidden;
+}
 /* 🌈 Responsive Layout */
 
 /* about */
