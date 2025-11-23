@@ -61,7 +61,8 @@ img {
   display: flex;
   align-items: center;          
   justify-content: space-between;
-  max-width: 800px;            
+  max-width:1000px;    
+  height: 600px;        
   margin: 40px auto;             
   background-color: #ffffff;
   border-radius: 16px;
@@ -74,8 +75,8 @@ img {
     transform: translateY(-10px);   /* ขยับขึ้น 10px */
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
-.text-section {
-  flex: 1;                   
+.text-section{
+  gap: 10px;
 }
 
 .text-section h1 {
