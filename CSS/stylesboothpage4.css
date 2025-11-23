@@ -7,14 +7,6 @@ body {
   margin: 0;
   padding: 0;
 }
-.w3-top {
-  top: 0;
-  position: relative;
-  width: 100%;
-  z-index: 1000;
-  margin: 0;
-  border: none;
-}
 * { box-sizing: border-box; }
 body { font-family: sans-serif; margin: 0; }
 
