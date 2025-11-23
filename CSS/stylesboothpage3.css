@@ -51,3 +51,16 @@ img {
 .zone-card .w3-container {
   flex-grow: 1;
 }
+.price{
+  background-color: rgba(235, 37, 37, 0.71);
+  padding: 5px 7px;
+  border-radius: 15px;
+  display: inline-block;
+  font-weight: 600;
+  font-family: "Sniglet", system-ui;
+  font-size: 15px;
+  color: #f7ee6c;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
