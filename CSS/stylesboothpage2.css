@@ -57,18 +57,63 @@ img {
     margin-top: 10px;
     color: #fff;
 }
+.container {
+  display: flex;
+  align-items: center;          
+  justify-content: space-between;
+  max-width: 800px;            
+  margin: 40px auto;             
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 40px;
+  gap: -100px; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;      
+}
+.container:hover {
+    transform: translateY(-10px);   /* ขยับขึ้น 10px */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.text-section {
+  flex: 1;                   
+}
+
+.text-section h1 {
+  font-size: 28px;
+  color: #b23b48;
+  margin-bottom: 16px;
+}
+
+.text-section p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-section img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  object-fit: cover;
+}
 .booth-images {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 25px;
-  margin: 40px auto;
+  gap: -50px;
+  margin: 50px auto;
   max-width: 1000px;
   margin-top: 100px;
 }
 .booth-pic {
   width: 45%;
-  min-width: 550px;
+  min-width: 450px;
   height: 400px;
   object-fit: cover;
   border-radius: 30px;
