@@ -583,3 +583,173 @@ input[type="submit"]:hover {
     font-weight: bold;
     color: #333;
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* ป้องกันเว็บล้นขอบจอ */
+}
+
+@media (max-width: 992px) {
+    .nav-links {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #f9f9f9;
+        padding: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .header-section h1 {
+        font-size: 1.8em;
+    }
+    .header-section p {
+        font-size: 1em;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .about-wrapper {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 100%;
+    }
+
+    .about-text {
+        font-size: 1em;
+    }
+
+    .about-section {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-text {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-member {
+        width: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member {
+        width: 140px;
+    }
+}
+@media (max-width: 992px) {
+    .zone-card {
+        width: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .zone-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .zone-card {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .zone-image {
+        height: 180px;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .zone-card {
+        width: 95%;
+    }
+    .zone-image {
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-card {
+        width: 90%;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card-content h3 {
+        font-size: 1.1em;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-column {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 95%;
+        padding: 20px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 15px;
+    }
+}

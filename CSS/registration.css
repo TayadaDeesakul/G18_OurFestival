@@ -25,3 +25,38 @@ h2,#result{
 #result{
     background: #ad0404;
 }
+@media (max-width: 768px) {
+
+  body {
+    font-size: 16px;
+  }
+
+  .navbar-brand {
+    font-size: 1.3em;
+  }
+
+  h2, #result {
+    font-size: 1.4em;
+  }
+}
+@media (max-width: 480px) {
+
+  body {
+    font-size: 15px;
+    padding: 0 10px;
+  }
+
+  .navbar-brand {
+    font-size: 1.1em;
+  }
+
+  h2, #result {
+    font-size: 1.2em;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+  }
+}

@@ -191,43 +191,96 @@ img {
   outline: none;
   cursor: pointer;
 }
+@media (max-width: 992px) {
 
-@media screen and (max-width: 600px) {
-  .product-card {
-    width: 90%; 
+  .container {
+    flex-direction: column;
+    height: auto;
+    padding: 30px;
+    gap: 20px;
+    text-align: center;
   }
+
+  .image-section img {
+    max-width: 350px;
+  }
+
+  .booth-images {
+    gap: 20px;
+  }
+
   .booth-pic {
-    width: 90%; 
+    width: 80%;
+    height: 330px;
     min-width: unset;
   }
-}
-.snow-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* เพื่อไม่ให้บังการคลิก */
-  overflow: hidden;
-  z-index: 9999;
-}
 
-.snowflake {
-  position: absolute;
-  top: -10px;
-  color: white;
-  font-size: 12px;
-  animation-name: fall;
-  animation-timing-function: linear;
-}
-
-@keyframes fall {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
+  .product-grid {
+    gap: 20px;
   }
-  100% {
-    transform: translateY(100vh) rotate(360deg);
-    opacity: 0.2;
+
+  .product-card {
+    width: 240px;
+  }
+}
+@media (max-width: 768px) {
+
+  .text-overlay h1 {
+    font-size: 30px;
+  }
+  .text-overlay p {
+    font-size: 16px;
+  }
+
+  .container {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .image-section img {
+    max-width: 300px;
+  }
+
+  .booth-pic {
+    width: 100%;
+    height: 280px;
+  }
+
+  .product-card {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+@media (max-width: 480px) {
+
+  img {
+    height: 250px;
+  }
+
+  .text-overlay h1 {
+    font-size: 24px;
+  }
+
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .text-section h1 {
+    font-size: 22px;
+  }
+
+  .booth-pic {
+    height: 220px;
+    border-radius: 20px;
+  }
+
+  .product-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .product-card img {
+    height: 150px;
   }
 }

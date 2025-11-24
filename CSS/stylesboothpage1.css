@@ -245,5 +245,32 @@ object-fit: cover;
     opacity: 0.2;
   }
 }
+@media (max-width: 480px) {
+    .zone-grid {
+        gap: 20px;
+    }
+
+    .zone-card {
+        max-width: 100%;
+    }
+
+    .zone-img {
+        height: 180px;
+    }
+
+    .zone-title {
+        font-size: 26px;
+    }
+}
+@media (max-width: 768px) {
+    .zone-grid {
+        gap: 30px;
+    }
+
+    .zone-card {
+        max-width: 260px;
+    }
+}
+
 
 

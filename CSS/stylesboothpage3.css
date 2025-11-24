@@ -1,5 +1,5 @@
 body {
-      background: linear-gradient(to bottom right, #fff5f5, #ffeaea);
+      background: linear-gradient(to bottom right, #fff5f5, #ffeaea) !important;
 }
 .slideshow-container {
   max-width: 100%;
@@ -104,17 +104,24 @@ img {
     }
     
 .zone-card {
-  height: 800px;
+  background-color: #ffffff;
+  height: auto;        /* แก้จาก height: 800px; */
+  min-height: 0;
   display: flex;
   flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .zone-card img {
-  flex-shrink: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .zone-card .w3-container {
-  flex-grow: 1;
+  background-color: #ffffff;
 }
 .price{
   background-color: rgba(235, 37, 37, 0.71);
@@ -157,5 +164,32 @@ img {
   100% {
     transform: translateY(100vh) rotate(360deg);
     opacity: 0.2;
+  }
+}
+@media (max-width: 768px) {
+  .slideshow-container img {
+    height: 35vh;
+  }
+}
+@media (max-width: 480px) {
+
+  .container {
+    padding: 20px;
+  }
+
+  .zone-card img {
+    height: 160px;
+  }
+
+  .mySlides img {
+    height: 30vh;
+  }
+
+  .text-overlay h1 {
+    font-size: 26px;
+  }
+
+  .text-overlay p {
+    font-size: 14px;
   }
 }

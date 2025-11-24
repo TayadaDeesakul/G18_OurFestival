@@ -202,4 +202,85 @@ body {
     opacity: 0.2;
   }
 }
+@media (max-width: 1024px) {
+
+  img {
+    height: 320px;
+  }
+
+  .text-overlay h1 {
+    font-size: 38px;
+  }
+
+  .text-overlay p {
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 90%;
+    padding: 30px;
+    gap: 30px;
+  }
+}
+@media (max-width: 768px) {
+
+  /* สไลด์ */
+  img {
+    height: 260px;
+  }
+
+  .text-overlay h1 {
+    font-size: 30px;
+  }
+
+  .text-overlay p {
+    font-size: 16px;
+  }
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .image-section img {
+    max-width: 300px;
+  }
+  .card {
+    width: 45%;
+  }
+}
+@media (max-width: 480px) {
+
+  img {
+    height: 200px;
+  }
+
+  .text-overlay h1 {
+    font-size: 24px;
+  }
+
+  .text-overlay p {
+    font-size: 14px;
+  }
+  .container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .text-section h1 {
+    font-size: 22px;
+  }
+
+  .text-section p {
+    font-size: 14px;
+  }
+  .card {
+    width: 90%;
+  }
+
+  .card img {
+    height: 150px;
+  }
+}
 
