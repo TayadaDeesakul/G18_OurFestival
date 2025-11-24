@@ -12,18 +12,24 @@
 <body>
 
   <!-- Navbar -->
-  <div class="w3-top">
-    <div class="w3-bar w3-white w3-padding w3-card nav-bar">
-      <a href="index.html" class="w3-bar-item w3-button nav-logo">Feliz Navidad Fair 🎄</a>
-      <div class="w3-right w3-hide-small">
-        <a href="index.html" class="w3-bar-item w3-button">Home</a>
-        <a href="#about" class="w3-bar-item w3-button">About</a>
-        <a href="#team" class="w3-bar-item w3-button">Team</a>
-        <a href="booth-directory.html" class="w3-bar-item w3-button">Zone</a>
-        <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-      </div>
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card nav-bar">
+    <a href="index.html" class="w3-bar-item w3-button nav-logo">Feliz Navidad Fair 🎄</a>
+
+    <!-- Hamburger (มือถือเท่านั้น) -->
+    <button class="nav-toggle w3-bar-item w3-button" aria-expanded="false" aria-label="Toggle menu">☰</button>
+
+    <!-- เมนู -->
+    <div class="w3-right nav-items">
+      <a href="index.html" class="w3-bar-item w3-button nav-link">Home</a>
+      <a href="#about" class="w3-bar-item w3-button nav-link">About</a>
+      <a href="#team" class="w3-bar-item w3-button nav-link">Team</a>
+      <a href="booth-directory.html" class="w3-bar-item w3-button nav-link">Zone</a>
+      <a href="#contact" class="w3-bar-item w3-button nav-link">Contact</a>
     </div>
   </div>
+</div>
+
 
   <!-- Header -->
   <header class="header-section" id="home">

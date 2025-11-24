@@ -412,3 +412,77 @@ h1, h2, h3, .section-title {
     font-size: 0.95em;
   }
 }
+
+/* 🌟 ซ่อน Hamburger บน Desktop */
+.w3-bar .nav-toggle,
+.nav-bar .nav-toggle,
+header .nav-toggle {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* เมนูบน desktop */
+.nav-items {
+  display: flex !important;
+  gap: 12px;
+  align-items: center;
+}
+
+/* แก้ตำแหน่งให้ชิดขวาตาม W3 */
+.w3-bar .nav-items {
+  margin-left: auto;
+}
+
+/* 🌟 MOBILE (≤ 768px) */
+@media (max-width: 768px) {
+
+  /* แสดง Hamburger */
+  .w3-bar .nav-toggle,
+  .nav-bar .nav-toggle,
+  header .nav-toggle {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    background: transparent;
+    border: none;
+    font-size: 1.7rem;
+    cursor: pointer;
+    padding: 6px;
+    margin-left: 8px;
+  }
+
+  /* ซ่อนเมนูบนมือถือ */
+  .nav-items {
+    display: none !important;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 10px;
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 10px;
+    flex-direction: column;
+    min-width: 160px;
+    z-index: 1200;
+  }
+
+  /* แสดงเมื่อเปิด */
+  .nav-items.open {
+    display: flex !important;
+  }
+
+  /* ลิงก์ในเมนูมือถือ */
+  .nav-items .nav-link {
+    display: block;
+    padding: 8px 12px;
+    white-space: normal;
+  }
+
+  /* โลโก้ย่อเล็กน้อย */
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+}
