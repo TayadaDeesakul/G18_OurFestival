@@ -28,5 +28,15 @@
         "age": "18-25",
         "gender": "Female",
         "dateAtd": "2025-11-26"
+    },
+    {
+        "fullname": "meme",
+        "email": "meme@gmail.com",
+        "type": "registration",
+        "created_at": "2025-11-25 07:39:17",
+        "phone": "0214567894",
+        "age": "under 18",
+        "gender": "LGBTQIA+",
+        "dateAtd": "2025-11-26"
     }
 ]
