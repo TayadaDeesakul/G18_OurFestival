@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ระบุ IP ของเครื่อง server ตรงนี้ครั้งเดียว
+    const BASE_URL = 'http://44.211.32.196/G18_OurFestival';
+
     const filterType = document.getElementById('filter-type');
     const filterSearch = document.getElementById('filter-search');
     const filterDateStart = document.getElementById('filter-date-start');
@@ -10,9 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function loadAndDisplayData() {
         try {
-            const response = await fetch('data.json');
-            const allRegistrations = await response.json();
+            const response = await fetch(`${BASE_URL}/data.json`);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
+            const allRegistrations = await response.json();
             userTableBody.innerHTML = '';
 
             if (!Array.isArray(allRegistrations) || allRegistrations.length === 0) {
@@ -32,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 tr.innerHTML = `
                     <td>${entry.fullname}</td>
                     <td>${entry.email}</td>
-                    <td>${(entryType === 'registration' ? 'Registration' : 'Feedback')}</td>
+                    <td>${entryType === 'registration' ? 'Registration' : 'Feedback'}</td>
                     <td>${entry.created_at || 'N/A'}</td>
                 `;
 
@@ -44,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Error loading data:', error);
             userTableBody.innerHTML = '<tr><td colspan="4">เกิดข้อผิดพลาดในการโหลดข้อมูล</td></tr>';
+            userCount.textContent = 0;
         }
     }
 
@@ -66,12 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const rowEmail = row.cells[1].textContent.toLowerCase();
 
             const typeMatch = (typeValue === 'all') || (typeValue === rowType);
-
-            const searchMatch = (rowName.includes(searchValue)) ||
-                (rowEmail.includes(searchValue));
-
+            const searchMatch = rowName.includes(searchValue) || rowEmail.includes(searchValue);
             const dateStartMatch = (!startDateValue) || (rowDate >= startDateValue);
-
             const dateEndMatch = (!endDateValue) || (rowDate <= endDateValue);
 
             if (typeMatch && searchMatch && dateStartMatch && dateEndMatch) {

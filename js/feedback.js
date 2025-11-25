@@ -2,10 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("feedbackForm");
     const ratingDisplay = document.getElementById("ratingDisplay");
 
+    // โหลด rating ที่เคยเลือกไปก่อนหน้า
     const savedRating = localStorage.getItem("userRating");
-    if (savedRating) {
-        ratingDisplay.textContent = `Your last rating was: ${savedRating}`;
-    }
+    if (savedRating) ratingDisplay.textContent = `Your last rating was: ${savedRating}`;
 
     form.addEventListener("submit", async function (event) {
         event.preventDefault();
@@ -21,45 +20,31 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const rating = satisfaction.value;
-
         ratingDisplay.textContent = `You rated: ${rating}`;
-
         localStorage.setItem("userRating", rating);
 
-        const formData = {
-            fullname: fullname,
-            email: email,
-            rating: rating,
-            feedback: feedback
-        };
+        const formData = { fullname, email, rating, feedback };
 
         try {
-            const res = await fetch("feedback.php", {
+            const res = await fetch("http://44.211.32.196/G18_OurFestival/feedback.php", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)
             });
 
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
             const data = await res.json();
 
             if (data.status === "success") {
-                alert("Thank you! Your feedback has been saved.");
+                alert("ขอบคุณค่ะ! ระบบบันทึกข้อมูลเรียบร้อยแล้ว");
                 form.reset();
             } else {
                 alert("Error: " + data.message);
             }
 
         } catch (err) {
-            alert("Server error: " + err);
+            alert("เกิดข้อผิดพลาด: " + err);
         }
-    });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
-
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
     });
 });
